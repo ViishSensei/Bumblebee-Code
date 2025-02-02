@@ -1,0 +1,12 @@
+/** @format */ import express from "express"; const app = express(); const PORT = 8047; app.get("/", async (req, res) => { res.send(`
+<html>
+  <body>
+    <div id="time"></div>
+    <script>
+      setInterval(() => {
+        document.getElementById('time').innerText = new Date().toLocaleTimeString();
+      }, 1000);
+    </script>
+  </body>
+</html>
+`); }); app.listen(PORT, () => console.log(\`Server running on port ${PORT}\`));
